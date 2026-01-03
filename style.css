@@ -1,0 +1,371 @@
+/* Base Styles - OVO GOLD & BLACK THEME */
+:root {
+    --ovo-black: #000000;
+    --ovo-gold: #D4AF37;
+    --ovo-gold-light: #E6C158;
+    --ovo-gold-dark: #B8951E;
+    --ovo-white: #FFFFFF;
+    --dark-bg: #0a0a0a;
+}
+
+/* Your preferred background style */
+body {
+    background-color: #000000;
+    background-image: url('/img/background_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+    position: relative;
+}
+
+/* Add a dark overlay for better text readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: -1;
+}
+
+/* Typography - GOLD ACCENTS */
+.profile-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--ovo-gold) !important;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.profile-tagline {
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: var(--ovo-white);
+    text-shadow: 0 0 5px var(--ovo-gold);
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: var(--ovo-gold) !important;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+    margin-bottom: 1rem;
+}
+
+h4 {
+    color: var(--ovo-gold-light) !important;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--ovo-gold);
+    padding-bottom: 0.3rem;
+}
+
+/* Profile Cards - SEMI-TRANSPARENT WITH GOLD BORDERS */
+.profile-card {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid var(--ovo-gold) !important;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(3px);
+}
+
+.profile-card .card-header {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(212, 175, 55, 0.3), rgba(0, 0, 0, 0.9)) !important;
+    border-bottom: 2px solid var(--ovo-gold) !important;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--ovo-white) !important;
+}
+
+/* Status Box */
+.status-box {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid var(--ovo-gold);
+    border-radius: 0;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.status-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--ovo-white);
+    text-shadow: 0 0 5px var(--ovo-gold);
+}
+
+/* Badges - GOLD THEME */
+.badge {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 0;
+    color: #000000 !important; /* Black text on gold badges */
+}
+
+.bg-purple {
+    background-color: var(--ovo-gold) !important;
+    border: 1px solid var(--ovo-gold-light);
+}
+
+.bg-blue {
+    background-color: var(--ovo-gold-dark) !important;
+    border: 1px solid var(--ovo-gold);
+}
+
+.bg-pink {
+    background-color: var(--ovo-gold-light) !important;
+    border: 1px solid var(--ovo-gold);
+    color: #000000 !important;
+}
+
+/* Images - GOLD BORDERS */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border: 4px solid var(--ovo-gold) !important;
+    box-shadow: 0 0 25px var(--ovo-gold);
+}
+
+.friend-img {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--ovo-gold) !important;
+}
+
+/* Media Lists */
+.media-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.media-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--ovo-white) !important;
+}
+
+.media-list li:before {
+    content: '▶';
+    color: var(--ovo-gold);
+    position: absolute;
+    left: 0;
+}
+
+/* REQUIRED HOVER EFFECTS - GOLD GLOW */
+
+/* 1. Contact Buttons Hover */
+.contact-btn {
+    transition: all 0.3s ease;
+    border-radius: 0;
+    font-family: 'Orbitron', sans-serif;
+    border: 1px solid var(--ovo-gold) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: var(--ovo-white) !important;
+}
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.6);
+    border: 1px solid var(--ovo-gold-light) !important;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), rgba(0, 0, 0, 0.8)) !important;
+    color: var(--ovo-gold-light) !important;
+}
+
+/* 2. Friend Images Hover */
+.friend-img:hover {
+    transform: scale(1.2) rotate(5deg);
+    border-color: var(--ovo-gold-light) !important;
+    box-shadow: 0 0 20px var(--ovo-gold);
+}
+
+/* 3. Social Icons Hover */
+.social-icon {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    color: var(--ovo-gold) !important;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--ovo-gold-light) !important;
+    transform: scale(1.3);
+    text-shadow: 0 0 15px var(--ovo-gold);
+}
+
+/* 4. View All Friends Button Hover */
+.view-all-friends {
+    color: var(--ovo-gold) !important;
+    border-color: var(--ovo-gold) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.view-all-friends:hover {
+    background-color: var(--ovo-gold) !important;
+    color: #000000 !important;
+    border-color: var(--ovo-gold) !important;
+    box-shadow: 0 0 15px var(--ovo-gold);
+}
+
+/* Button Colors - GOLD THEME */
+.btn-primary {
+    background: linear-gradient(45deg, var(--ovo-gold-dark), var(--ovo-gold)) !important;
+    border-color: var(--ovo-gold) !important;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #B8951E, #D4AF37) !important;
+    border-color: var(--ovo-gold) !important;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #D4AF37, #E6C158) !important;
+    border-color: var(--ovo-gold-light) !important;
+    color: #000000 !important;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #B8951E, #D4AF37) !important;
+    border-color: var(--ovo-gold) !important;
+}
+
+.btn-info {
+    background: linear-gradient(45deg, var(--ovo-gold-dark), var(--ovo-gold)) !important;
+    border-color: var(--ovo-gold) !important;
+}
+
+.btn-outline-info {
+    color: var(--ovo-gold) !important;
+    border-color: var(--ovo-gold) !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-outline-info:hover {
+    background-color: var(--ovo-gold) !important;
+    color: #000000 !important;
+}
+
+/* List Items */
+.list-unstyled li {
+    color: var(--ovo-white) !important;
+}
+
+.list-unstyled li i {
+    color: var(--ovo-gold) !important;
+}
+
+/* Footer - GOLD ACCENTS */
+.profile-footer {
+    background: rgba(0, 0, 0, 0.85) !important;
+    border-top: 3px solid var(--ovo-gold) !important;
+    border-bottom: 3px solid var(--ovo-gold-dark) !important;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--ovo-white) !important;
+    backdrop-filter: blur(3px);
+}
+
+.footer-section {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid var(--ovo-gold);
+    padding: 1.2rem;
+    border-radius: 0;
+}
+
+.footer-section h4 {
+    color: var(--ovo-gold) !important;
+    border-bottom: 2px solid var(--ovo-gold);
+}
+
+/* Developer Signature - GOLD */
+.developer-signature {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--ovo-gold) !important;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+    border: 1px solid var(--ovo-gold);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* Course Badges */
+.course-badge .badge {
+    border: 1px solid var(--ovo-gold) !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(2px);
+}
+
+.course-badge .bg-primary {
+    background: linear-gradient(45deg, var(--ovo-gold-dark), var(--ovo-gold)) !important;
+}
+
+.course-badge .bg-info {
+    background: linear-gradient(45deg, #B8951E, #D4AF37) !important;
+}
+
+.course-badge .bg-warning {
+    background: linear-gradient(45deg, var(--ovo-gold), var(--ovo-gold-light)) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--ovo-gold), var(--ovo-gold-dark));
+    border-radius: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+    
+    /* Make background image work better on mobile */
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Ensure all text is visible */
+p, span, div, li, td, th, label, small {
+    color: var(--ovo-white) !important;
+}
+
+/* Icons */
+.fas, .fab, .far {
+    color: var(--ovo-gold) !important;
+}
+
+/* Make sure content has proper z-index */
+.container-fluid {
+    position: relative;
+    z-index: 1;
+}
