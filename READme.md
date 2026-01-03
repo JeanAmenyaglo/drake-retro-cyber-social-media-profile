@@ -1,14 +1,3 @@
-================================================================================
-SDEV1701 - UI/UX for Developers
-Assignment 4: Social Media Website (Final Project)
-================================================================================
-
-STUDENT INFORMATION:
--------------------
-Name: Jean Amenyaglo
-Date: December 2025
-Location: Edmonton, Alberta, Canada
-
 PROJECT DETAILS:
 ---------------
 Project: Drake OVO Social Media Profile
