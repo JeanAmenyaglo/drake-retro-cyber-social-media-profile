@@ -1,0 +1,48 @@
+name: Deploy to AWS S3 and CloudFront
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - '.github/**'
+      - '.gitignore'
+      - '**/MERGE*'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write        # Required for OIDC
+      contents: read         # Required to checkout the repo
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::408433988572:role/github-oidc-deploy-role
+          role-session-name: github-actions
+          aws-region: ca-central-1
+
+      # Step 3: Sync files to S3 while EXCLUDING dev-only folders
+      - name: Sync files to S3 (exclude dev folders)
+        run: |
+          aws s3 sync . s3://jean-static-site3 --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "README.md"
+
+      # Step 4: Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E3U9XOIRXVDZ88 \
+            --paths "/*"
